@@ -9,8 +9,13 @@
     ]
   },
   "scripts": {
+    "stories": "cd components && yarn storybook",
     "start": "lerna run --parallel start",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "sync-components": "rm -rf node_modules && yarn"
+  },
+  "dependencies": {
+    "components": "file:./components"
   },
   "devDependencies": {
     "lerna": "^4.0.0"

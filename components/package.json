@@ -1,11 +1,11 @@
 {
-  "name": "main",
+  "name": "components",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "license": "MIT",
   "scripts": {
-    "start": "webpack serve",
-    "build": "webpack --mode production"
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -15,15 +15,17 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-react": "^7.13.13",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/react": "^6.3.8",
     "babel-loader": "^8.2.2",
-    "css-loader": "^6.2.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.25.1",
-    "external-remotes-plugin": "^1.0.0",
     "html-webpack-plugin": "^5.3.1",
-    "style-loader": "^3.2.1",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^4.0.0"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

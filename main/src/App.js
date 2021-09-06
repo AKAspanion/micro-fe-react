@@ -2,6 +2,8 @@ import React, { Suspense } from 'react';
 const Module1 = React.lazy(() => import('module1/App'));
 const Module2 = React.lazy(() => import('module2/App'));
 
+import { Button } from 'components/src/Button.jsx';
+
 const App = () => {
   return (
     <div>
@@ -14,6 +16,7 @@ const App = () => {
         }}
       >
         <h1>Main container</h1>
+        <Button label="Button in the main container" />
 
         <Suspense fallback={'loading...'}>
           <Module1 />

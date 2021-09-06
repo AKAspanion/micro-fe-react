@@ -17,10 +17,23 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
+        include: [
+          path.join(__dirname, '../node_modules/components'),
+          path.join(__dirname, 'node_modules/components'),
+          path.join(__dirname, 'src'),
+        ],
         options: {
           presets: ['@babel/preset-react'],
         },
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+        include: [
+          path.join(__dirname, '../node_modules/components'),
+          path.join(__dirname, 'node_modules/components'),
+          path.join(__dirname, 'src'),
+        ],
       },
     ],
   },
@@ -31,7 +44,11 @@ module.exports = {
       exposes: {
         './App': './src/App',
       },
-      shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
+      shared: {
+        react: { singleton: true },
+        'react-dom': { singleton: true },
+        'styled-components': { singleton: true },
+      },
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
